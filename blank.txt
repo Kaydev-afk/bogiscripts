@@ -1,0 +1,5 @@
+config -{
+ :rigg.cull.isActive == true
+ :ovul.repeat.isActive == false
+ :remap.keyclick.isActive == false
+}

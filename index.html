@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bogi Scripts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdf6e3;
+            --nav-color: #f5deb3;
+            --text-color: #4b4637;
+            --accent-color: #d2b48c;
+            --border-color: #c8a772;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Left Navigation Bar */
+        nav {
+            width: 200px;
+            background-color: var(--nav-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            background: var(--accent-color);
+            padding: 10px 15px;
+            display: block;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ceb180;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:active {
+            background-color: #bda078;
+            transform: scale(0.95);
+        }
+
+        /* Main Content */
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            overflow-y: auto;
+        }
+
+        .title {
+            font-size: 2.5em;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            color: #7a705e;
+            animation: slideUp 2s;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pageTransition {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        main {
+            animation: pageTransition 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Bogi Scripts</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+            <li><a href="templates.html">Templates</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <h1 class="title">Welcome to Bogi Scripts</h1>
+            <p class="subtitle">Relax, browse, and enjoy the insane scripts.</p>
+        </div>
+    </main>
+    <script>
+        // Add smooth transitions when switching pages
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const target = event.target.getAttribute('href');
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

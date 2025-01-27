@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bogi Scripts - Scripts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdf6e3;
+            --nav-color: #f5deb3;
+            --text-color: #4b4637;
+            --accent-color: #d2b48c;
+            --border-color: #c8a772;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        nav {
+            width: 200px;
+            background-color: var(--nav-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            background: var(--accent-color);
+            padding: 10px 15px;
+            display: block;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ceb180;
+            transform: scale(1.05);
+        }
+
+        nav ul li a:active {
+            background-color: #bda078;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 50px;
+            overflow-y: auto;
+        }
+
+        .scripts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .script-box {
+            background: var(--nav-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            padding-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .script-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .script-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .script-box h3 {
+            margin: 15px 0 5px 0;
+        }
+
+        .script-box p {
+            font-size: 0.9em;
+            margin: 0 10px 10px 10px;
+            color: #5a5341;
+        }
+
+        .script-box button {
+            background: var(--accent-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .script-box button:hover {
+            background-color: #ceb180;
+        }
+
+        .script-box button:active {
+            background-color: #bda078;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Bogi Scripts</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+            <li><a href="templates.html">Templates</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="scripts-grid">
+            <div class="script-box">
+                <img src="Scriptone.jpg" alt="Script">
+                <h3>Inf Yield</h3>
+                <p>A very popular script granting client side admin commands.</p>
+                <button onclick="openLink('https://rkns.link/r7aap')">Get Script</button>
+            </div>
+            <div class="script-box">
+                <img src="Script2.jpg" alt="Script">
+                <h3>Fling All</h3>
+                <p>Flings all players into the sky.</p>
+                <button onclick="openLink('https://rkns.link/knoyx')">Get Script</button>
+            </div>
+            <div class="script-box">
+                <img src="Script3.jpg" alt="Script">
+                <h3>FE F*CK Script</h3>
+                <p>Makes you F*CK other players.</p>
+                <button onclick="openLink('https://hastebin.com/share/hamujawome.vbnet')">Get Script</button>
+            </div>
+            <div class="script-box">
+                <img src="Script4.jpg" alt="Script">
+                <h3>Orca Hub</h3>
+                <p>An advanced gui with special features.</p>
+                <button onclick="openLink('https://rkns.link/nwfml')">Get Script</button>
+            </div>
+            <div class="script-box">
+                <img src="Script5.jpg" alt="Script">
+                <h3>Universal Aimbot & ESP</h3>
+                <p>A universal Aimbot and esp script</p>
+                <button onclick="openLink('https://rkns.link/f4kw9')">Get Script</button>
+            </div>
+            <div class="script-box">
+                <h3>Adding more scripts soon!</h3>
+                <p>We are working to add more scripts very soon!</p>
+                <p>While you wait you should check out all of the current scripts!</p>
+                <br>
+                <br>
+                <br>
+                <p><em>Sincerely, -Bogi</em></p>
+            </div>
+            
+        </div>
+    </main>
+    <script>
+        function openLink(url) {
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
